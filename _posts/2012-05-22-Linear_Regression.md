@@ -13,16 +13,16 @@ comments: true
 
 `Note`:
 - m = number of training 
-- $x's$ = input features 
-- $y's$ = output variables
+- \\[ x's \\] = input features 
+- \\[y's \\] = output variables
 - $(x, y)$ one training example 
 - $x^{(i)}, y^{(i)}$ : $i^{th}$ example   
 
 1. One variable 
-> `hypothesis`: $h_{\theta}(x) = \theta_0 + \theta_1x$
+> `hypothesis`: \\[ h_{\theta}(x) = \theta_0 + \theta_1x \\]
 
 Cost function: 
-$J(\theta_1, \theta_2) = \frac{1}{2m}\sum _{i=1}^m\:\left(h_\theta\left(x^{(i)}\right)- y^{(i)}\right)^2$
+\\[J(\theta_1, \theta_2) = \frac{1}{2m}\sum _{i=1}^m\:\left(h_\theta\left(x^{(i)}\right)- y^{(i)}\right)^2 \\]
 
 Goal: minimze $J(\theta_1, \theta_2)$
 
@@ -51,10 +51,11 @@ Với y tương tự như đạo hàm riêng của x
 
 $F(u,v) = u(x,y)+v(x,y)$
 
-$
+\\[
 \left\{\begin{matrix}
 \frac{\partial F}{\partial x} = \frac{\partial F}{\partial u}\frac{\partial u}{\partial x}\\ \frac{\partial F}{\partial y} = \frac{\partial F}{\partial v}\frac{\partial v}{\partial y}
-\end{matrix}\right.$
+\end{matrix}\right.
+\\]
 
 * Ma trận Jacobi của phép đổi biến $u=u(x,y), v=v(x, y)$
 
@@ -68,7 +69,7 @@ Nếu ta kết hợp các đạo hàm riêng lại thành một véc-tơ và tí
 
 Ta có gradient tại điểm M:
 
-$\nabla{f(x_0, y_0)} = \Bigg(\frac{\partial{f}}{\partial{x}}(x_0, y_0), \frac{\partial{f}}{\partial{y}}(x_0, y_0)\Bigg)$
+\\[ \nabla{f(x_0, y_0)} = \Bigg(\frac{\partial{f}}{\partial{x}}(x_0, y_0), \frac{\partial{f}}{\partial{y}}(x_0, y_0)\Bigg) \\]
 
 Gradient là **một vector cột**, kí hiệu $\nabla{f} = \Bigg[\frac{\partial{f}}{\partial{x}}\Bigg]\text{\^{i}} + \Bigg[\frac{\partial{f}}{\partial{y}}\Bigg]\text{\^{j}}$
 
