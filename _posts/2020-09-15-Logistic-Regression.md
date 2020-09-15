@@ -1,6 +1,4 @@
 
-# Logistic Regression
-
 Classification:
 
 - Can't use linear regression
