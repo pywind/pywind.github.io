@@ -1,4 +1,13 @@
-
+---
+layout: post
+title:  "Logistic Regression"
+date:   2020-09-15
+excerpt: "Just about everything you need to know about logistic regression, math, derivative and more."
+tag:
+- ML
+- GD
+comments: true
+---
 Classification:
 
 - Can't use linear regression
