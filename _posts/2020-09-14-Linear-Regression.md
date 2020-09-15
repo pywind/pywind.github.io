@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "Linear Regression"
@@ -11,6 +10,7 @@ tag:
 - Learning
 comments: true
 ---
+
 `Note`:
 - m = number of training
 - $$x's$$ = input features
