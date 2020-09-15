@@ -113,7 +113,7 @@ Analysis and visualize before training
 
 Preparing argument
 
-``` Python
+``` python
 m = len(df)
 X = np.append(arr = np.ones((m,1)).astype(int), values = df[[0,1]], axis = 1) # training examples
 y = df.iloc[:,2].to_numpy(dtype = float).reshape(-1, 1) # real values
@@ -125,7 +125,7 @@ cost = np.zeros((iters, 1)) # Cost function to visualization
 
 Data Preprocessing
 
-``` Python
+``` python
 from sklearn.preprocessing import MinMaxScaler
 #Normalization for data not follow a Gaussian distribution
 
@@ -168,7 +168,7 @@ for i in range(0, iters):
 
 Visualize cost function
 
-``` Python
+``` python
 plt.plot(np.arange(len(cost)), cost, color = 'r')
 
 # Chose the good learning rate to get like below.
@@ -178,7 +178,7 @@ plt.plot(np.arange(len(cost)), cost, color = 'r')
 ![Cost function](https://github.com/pywind/pywind.github.io/blob/master/assets/img/cost-function.png)
 
 ## Linear Regression with scikit-learn
-```Python
+``` python
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
