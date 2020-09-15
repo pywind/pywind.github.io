@@ -175,7 +175,7 @@ plt.plot(np.arange(len(cost)), cost, color = 'r')
 
 ```
 
-![Cost function](https://github.com/pywind/pywind.github.io/blob/master/assets/img/cost-function.png)
+![Cost function](https://github.com/pywind/pywind.github.io/blob/master/assets/img/costfunction.jpg)
 
 ## Linear Regression with scikit-learn
 ``` python
