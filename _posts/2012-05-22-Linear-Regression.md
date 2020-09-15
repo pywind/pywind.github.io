@@ -1,8 +1,6 @@
 
-> Propose: Regression problem, predict real-value, ...
 
 `Note`:
-
 - m = number of training
 - $$x's$$ = input features
 - $$y's$$ = output variables
@@ -46,6 +44,8 @@ So finding the minimize point, we're going through the derivative.
 
 ### Derivative of $$J(\theta_0, \theta_1)$$
 
+> Here is an example of the derivative through a 2-variable function. Other multivariate functions are similar.
+
 **Step 1**: The derivative of the sum is equal to the sum of the derivatives.
 
  $$\frac{\partial}{\partial\theta_0}J(\theta_0, \theta_1)=\frac{\partial}{\partial\theta_0}(\frac{1}{2m}\sum_{i=1}^m\:\left(\theta_0 + \theta_1x_i-y_i\right)^2) =\frac{1}{2m}\sum_{i=1}^m\:\frac{\partial}{\partial \theta_0}\left(\theta_0 + \theta_1x_i-y_i\right)^2$$
@@ -76,6 +76,20 @@ Repeat until convergence (`with amount iteration`) {
 
 }
 
+### Importance
+
+> Apply the matrix vectorization to the general case as follows:
+
+Cost function:
+
+$$J(\theta) = \frac{1}{2m}(X\theta - y)^{T}(X\theta - y)$$
+
+Gradient Descent
+
+$$\theta = \theta - \frac{\alpha}{m} * (X^T (X\theta - y)) $$
+
+
+
 3. Source code with python
 
 Import library
@@ -100,57 +114,89 @@ Analysis and visualize before training
 Preparing argument
 
 ``` Python
-m = data[0].count()
-theta = np.zeros(2) # [0.0, 0.0]
-X = data[0] # training examples
-y = data[1] # real-values
-iters = 1500 # Depending size of data
-alpha = 0.0001 # Learning rate
+m = len(df)
+X = np.append(arr = np.ones((m,1)).astype(int), values = df[[0,1]], axis = 1) # training examples
+y = df.iloc[:,2].to_numpy(dtype = float).reshape(-1, 1) # real values
+theta = np.zeros((X.shape[1],1)) 
+iters = 1000 # iteration
+alpha = 0.001 # learning rate
+cost = np.zeros((iters, 1)) # Cost function to visualization
+```
+
+Data Preprocessing
+
+``` Python
+from sklearn.preprocessing import MinMaxScaler
+#Normalization for data not follow a Gaussian distribution
+
+# Transform data
+norm_X = MinMaxScaler().fit(X)
+X_train = norm_X.transform(X)
+norm_y = MinMaxScaler().fit(y)
+y_train = norm_y.transform(y)
+# First column is bias equal 1
+X_train[:,0] = 1
 ```
 
 Compute Cost function
 
 ``` python
 # to monitor the convergence by computing the cost.
-def cost_function(X, y, theta):
-    # set theta0 = 0, theta1 = 0
-    total_error = 0
-    for i in range(len(X)):
-        total_error += ((theta[0] + theta[1]*X[i]) - y[i])**2
-    return total_error / (2 * len(X))
+def computeCost(X, y, theta):
+    r = X @ w - y
+    return 0.5*np.sum(r*r)
 ```
 
 Gradient Descent
 
 ``` python
-def GradientDescent(X, y, theta, learning_rate):
-    temp_0, temp_1 = 0, 0 # to update simultaneously
-    m = float(len(X))
-    for i in range(len(X)):
-        temp_0 +=  (theta[0] + theta[1]*X[i] - y[i])
-        temp_1 +=  X[i]*(theta[0] + theta[1]*X[i] - y[i])
-
-    theta[0] = theta[0] - learning_rate*temp_0 / m
-    theta[1] = theta[1] - learning_rate*temp_1 / m
-
+def GradientDescentMulti(X, y, theta, alpha):
+    m = float(len(y))
+    theta = theta - (alpha / m) * (X.T @ (X @ theta - y))
     return theta
 ```
 
 Training model
 
 ``` python
-def training(X, y, theta, learning_rate, iters):
-    for i in range(iters):
-        theta = GradientDescent(X, y, theta, learning_rate)
-    return theta
-
-# The result of theta
-theta = training(X, y, theta, alpha, iters)
+#training(X, y, theta, alpha, iters, cost):
+for i in range(0, iters):
+    r = X_train @ theta - y_train
+    cost[i] = 0.5*np.sum(r*r)
+    theta = GradientDescentMulti(X_train, y_train, theta, alpha)
 ```
 
-> Đoạn này mình viết bằng tiếng việt sợ còn chưa hiểu nói gì ENG :v
-> 
-## Toán học
+Visualize cost function
+
+``` Python
+plt.plot(np.arange(len(cost)), cost, color = 'r')
+
+# Chose the good learning rate to get like below.
+
+```
+
+![Cost function](https://github.com/pywind/pywind.github.io/blob/master/assets/img/cost-function.png)
+
+## Linear Regression with scikit-learn
+```Python
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+X = df.iloc[:, :2]
+y = df.iloc[:,2]
+X_train, X_test, y_train, y_test = train_test_split(X_, y_, test_size=0.3, random_state=42)
+lm = LinearRegression()
+lm.fit(X_train, y_train)
+
+prediction = lm.predict(X_test)
+plt.scatter(y_test, prediction)
+```
+
+# This END!
+
+## Đoạn này sẽ bằng tiếng Việt :v
+
+### Toán học
 
 Cụ thể, cho hàm số $$f(x, y)$$ và một điểm $$M(x_0, y_0)$$ thuộc tập xác định của hàm, khi đó đạo hàm theo biến $$x$$ tại điểm M được gọi là đạo hàm riêng của $$f$$ theo $$x$$ tại M. Lúc này $$y$$ sẽ được cố định bằng giá trị $$y_0$$ và hàm của ta có thể coi là hàm 1 biến của biến $$x$$.
 
