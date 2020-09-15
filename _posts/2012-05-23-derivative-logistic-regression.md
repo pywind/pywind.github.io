@@ -1,4 +1,4 @@
-# Derivative in Logistic Regression
+
 
 Sigmoid function:
 
