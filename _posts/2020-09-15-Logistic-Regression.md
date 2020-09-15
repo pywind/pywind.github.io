@@ -61,6 +61,7 @@ As you see, GD of logistic regression same GD of linear regression.
 ## Vectorized 
 
 $$h=\sigma(X\theta)$$
+
 Cost function
 
 $$J(\theta)=\frac{1}{m}(-y^T ln(h)-(1-y)^T ln(1-h))$$
