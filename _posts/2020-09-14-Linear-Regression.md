@@ -1,5 +1,16 @@
 
-
+---
+layout: post
+title:  "Linear Regression"
+date:   2020-09-14
+excerpt: "Give an overview of linear regression. Formally, mathematically and more deeply."
+tag:
+- ML 
+- GD
+- Supervised
+- Learning
+comments: true
+---
 `Note`:
 - m = number of training
 - $$x's$$ = input features
