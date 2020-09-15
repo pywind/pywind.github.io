@@ -1,84 +1,42 @@
----
-layout: post
-title: "Testing Readability with a Bunch of Text"
-date: 2012-05-22
-excerpt: "A ton of text to test readability."
-tags: [sample post, readability, test]
-comments: true
----
+# Derivative in Logistic Regression
 
-# Linear Regression
+Sigmoid function:
 
-> Propose: Regression problem, predict real-value, ...
+$\sigma(s) = \frac{1}{1+e^{-s}}$ with $s=\theta x$
 
-`Note`:
-- m = number of training 
-- \\( x's \\) = input features 
-- \\(y's \\) = output variables
-- \\([ (x, y) \\) one training example 
-- \\( x^{(i)}, y^{(i)}$ : $i^{th} \\) example   
+Cost Function
 
-1. One variable 
-> `hypothesis`: \\( h_{\theta}(x) = \theta_0 + \theta_1x \\)
+$Cost(\sigma(s), y)=\left\{\begin{matrix}
+-ln(\sigma(s)), y = 1\\
+-ln(1-\sigma(s)),y=0
+\end{matrix}\right.$
 
-Cost function: 
-\\( J(\theta_1, \theta_2) = \frac{1}{2m}\sum _{i=1}^m\:\left(h_\theta\left(x^{(i)}\right)- y^{(i)}\right)^2 \\)
+We have
 
-Goal: minimze \\( J(\theta_1, \theta_2) \\)
+$\frac{\partial \sigma}{\partial s}=\frac{e^{-s}}{(1+e^{-s})^2}=\frac{1}{1+e^{-s}}.\frac{e^{-s}+1-1}{(1+e^{-s})^2}=\sigma(s)(1-\sigma(s))$(1)
 
-2. Gradient descent
+Compress cost function
 
-Outline:
+> $Cost(\sigma(s),y)=-y.ln(\sigma(s))-(1-y)ln(1-\sigma(s))$
 
-* Start with some \\( \theta_0, \theta_1$ (eg. $\theta_0 = 0, \theta_1 = 0 \\)
-* Keep changing \\( \theta_0, \theta_1$ to reduce $J(\theta_0, \theta_1) \\) to find the minimum 
+## $J(\theta)$ in Gradient Descent
 
-Algorithm
+> $J(\theta) = \frac{1}{m}\sum_{i=1}^{m}Cost(\sigma(x),y)$
 
-* Repeat until convergence 
-\\( \theta_j = \theta_j - \alpha\frac{\partial }{\partial \theta_j}J(\theta_0,\theta_1) \\)
+This is `cross-entropy` use to measure the distance between 2 probability distributions.
 
-## Toán học
+## Derivative of $J(\theta)$
 
-Cụ thể, cho hàm số $f(x, y)$ và một điểm $M(x_0, y_0)$ thuộc tập xác định của hàm, khi đó đạo hàm theo biến $x$ tại điểm M được gọi là đạo hàm riêng của $f$ theo $x$ tại M. Lúc này $y$ sẽ được cố định bằng giá trị $y_0$ và hàm của ta có thể coi là hàm 1 biến của biến $x$.
+$\frac{\partial J(\theta;x,y)}{\partial\theta}=\frac{\partial J}{\partial\sigma}.\frac{\partial \sigma}{\partial \theta}$ (Chain Rule)
 
-Định nghĩa:
-\\[ f_x^{\prime}(x_0, y_0) = \lim\limits_{\triangle_x \rightarrow 0} \frac{\triangle_xf}{\triangle_x} = \lim\limits_{\triangle_x \rightarrow 0} \frac{f(x_0 + \triangle_x, y_0) - f(x_0, y_0)}{\triangle_x} \\]
+$=\left ( \frac{-y}{\sigma} + \frac{1-y}{1-\sigma} \right)\frac{\partial\sigma}{\partial\theta}=\frac{\sigma-y}{\sigma(1-\sigma)}\frac{\partial\sigma}{\partial\theta}$(2)
 
-Với y tương tự như đạo hàm riêng của x
+Apply chain rule and we had $\frac{\partial\sigma}{\partial s}$
 
-`Công thức đạo hàm riêng của hàm hợp` theo *chain rule*
-\\[ F(u,v) = u(x,y)+v(x,y) \\]
+$\frac{\partial\sigma}{\partial\theta}=\frac{\partial\sigma}{\partial s}\frac{\partial s}{\partial \theta}=\sigma(1-\sigma).x$
 
-\\[
-\left\{\begin{matrix}
-\frac{\partial F}{\partial x} = \frac{\partial F}{\partial u}\frac{\partial u}{\partial x}\\ \frac{\partial F}{\partial y} = \frac{\partial F}{\partial v}\frac{\partial v}{\partial y}
-\end{matrix}\right.
-\\]
+Summary:
 
-* Ma trận Jacobi của phép đổi biến \( u=u(x,y), v=v(x, y) \)
+$(2)=\frac{\sigma-y}{\sigma(1-\sigma)}\frac{\partial\sigma}{\partial\theta}=\frac{\sigma-y}{\sigma(1-\sigma)}\frac{\partial\sigma}{\partial s}\frac{\partial s}{\partial \theta}=(\sigma-y)x$
 
-\\[ J=\begin{pmatrix}\frac{\partial u}{\partial x}&\frac{\partial v}{\partial x}\\ \frac{\partial v}{\partial y}&\frac{\partial v}{\partial y}\end{pmatrix} \\]
-
-## Đạo hàm theo hướng - Gradient
-
-Bổ đề: $\overrightarrow{l}$ là vector đơn vị $\Leftrightarrow$ hợp các vector tọa độ.
-
-Nếu ta kết hợp các đạo hàm riêng lại thành một véc-tơ và tính đạo hàm teo véc-tơ đó thì ta sẽ thu được đạo hàm toàn phần. Hay nói cách khác là đạo hàm theo tất cả các biến hay đạo hàm theo véc-tơ hợp thành đó. Đạo hàm này được gọi là gradient của hàm theo véc-tơ tương ứng.
-
-Ta có gradient tại điểm M:
-
-\\[ \nabla{f(x_0, y_0)} = \Bigg(\frac{\partial{f}}{\partial{x}}(x_0, y_0), \frac{\partial{f}}{\partial{y}}(x_0, y_0)\Bigg) \\]
-
-Gradient là **một vector cột**, kí hiệu \\( \nabla{f} = \Bigg[\frac{\partial{f}}{\partial{x}}\Bigg]\text{\^{i}} + \Bigg[\frac{\partial{f}}{\partial{y}}\Bigg]\text{\^{j}} \\)
-
-Ví dụ, hàm số \\( f(x, y) = x^2 + y^2 \\)
-  sẽ có gradient là: \\( \nabla{f} = \begin{bmatrix} 2x \cr 2y \end{bmatrix} \\)
-
-Đối với hàm véc-tơ, nhớ lại rằng đạo hàm riêng của nó là một véc-tơ hàng mà gradient thành kết hợp theo véc-tơ cột, nên gradient của hàm véc-tơ sẽ là một ma trận có số hàng bằng với số chiều véc-tơ giá trị và số cột bằng với số biến.
-
-\\[ J = \nabla f = \begin{bmatrix}
- \nabla f_1& \cdots &\nabla f_n \end{bmatrix}=\begin{pmatrix}
-\frac{\partial{f_1}}{\partial{x_1}} &\cdots & \frac{\partial{f_n}}{\partial{x_1}}\\ \vdots  & \ddots & \vdots \\ \frac{\partial{f_n}}{\partial{x_1}} &\cdots &\frac{\partial{f_n}}{\partial{x_n}} \end{pmatrix} \\]
-
- Ta có thể thấy rằng chiều của gradient sẽ cùng chiều với véc-tơ lấy đạo hàm. Hay nói một cách khác, hàm số tăng nhanh nhất theo hướng của gradient và giảm nhanh nhất khi ngược hướng với gradient của nó.
+As you see, GD of logistic regression same GD of linear regression.
