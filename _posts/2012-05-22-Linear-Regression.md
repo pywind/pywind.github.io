@@ -8,7 +8,7 @@
 - $$x^{(i)}, y^{(i)}$$ : $$i^{th}$$ example
 - $$\alpha$$ : learning rate
 
-1. One variable
+## One variable
 
 `Hypothesis`: $$h_{\theta}(x) = \theta_0 + \theta_1x$$
 
@@ -30,7 +30,7 @@ Algorithm
 - Repeat until convergence:
 $$\theta_j = \theta_j - \alpha\frac{\partial }{\partial \theta_j}J(\theta_0,\theta_1)$$
 
-### Correct: Simultaneous update (1)
+### Simultaneous update
 
 - temp_0  $$=\theta_0 - \alpha \frac{\partial}{\partial \theta_0}J(\theta_0, \theta_1)$$
 - temp_1  $$=\theta_1 - \alpha \frac{\partial}{\partial \theta_1}J(\theta_0, \theta_1)$$
@@ -50,7 +50,7 @@ So finding the minimize point, we're going through the derivative.
 
  $$\frac{\partial}{\partial\theta_0}J(\theta_0, \theta_1)=\frac{\partial}{\partial\theta_0}(\frac{1}{2m}\sum_{i=1}^m\:\left(\theta_0 + \theta_1x_i-y_i\right)^2) =\frac{1}{2m}\sum_{i=1}^m\:\frac{\partial}{\partial \theta_0}\left(\theta_0 + \theta_1x_i-y_i\right)^2$$
 
-**Step 2**: [`Apply power rule`](https://en.wikipedia.org/wiki/Power_rule) and [`chain rule`](https://en.wikipedia.org/wiki/Chain_rule).
+**Step 2**: [Apply power rule](https://en.wikipedia.org/wiki/Power_rule) and [Chain rule](https://en.wikipedia.org/wiki/Chain_rule).
 We have:
   
 $$\frac{\partial}{\partial \theta_0}(\theta_0 + \theta_1x_i-y_i)^2=\frac{\partial}{\partial \theta_0}(\theta_0 + \theta_1x_i-y_i)*2(\theta_0 + \theta_1x_i-y_i)^{2-1}$$
@@ -67,16 +67,16 @@ Similar to $$\theta_0$$, $$\frac{\partial}{\partial \theta_1}J(\theta_0, \theta_
 Above we have the derivative which is the decrease of the function J.
 If want to control the reduce of theta, we have the learning rate. Set that to 0.0000001 -> 0.001 would be reasonable for a good accuracy.
 
-Repeat until convergence (`with amount iteration`) {
+Repeat until convergence (*with amount iteration*) {
 
 - temp_0  $$=\theta_0-\alpha \frac{1}{m}\sum_{i=1}^m\:(\theta_0 + \theta_1x_i-y_i)$$
 - temp_1  $$=\theta_1 - \alpha\frac{1}{m}\sum_{i=1}^m\:x_i(\theta_0 + \theta_1x_i-y_i)$$
-- $$\theta_0$$ = temp_0
-- $$\theta_1$$ = temp_1
+- $$\theta_0=$$  temp_0
+- $$\theta_1=$$  temp_1
 
 }
 
-### Importance
+## Importance
 
 > Apply the matrix vectorization to the general case as follows:
 
@@ -90,7 +90,7 @@ $$\theta = \theta - \frac{\alpha}{m} * (X^T (X\theta - y)) $$
 
 
 
-3. Source code with python
+### Source code with python
 
 Import library
 
@@ -228,7 +228,7 @@ Ta có gradient tại điểm M:
 
 $$\nabla{f(x_0, y_0)} = \Bigg(\frac{\partial{f}}{\partial{x}}(x_0, y_0), \frac{\partial{f}}{\partial{y}}(x_0, y_0)\Bigg)$$
 
-Gradient là **một vector cột**, kí hiệu $$\nabla{f} = \Bigg[\frac{\partial{f}}{\partial{x}}\Bigg]\text{\^{i}} + \Bigg[\frac{\partial{f}}{\partial{y}}\Bigg]\text{\^{j}}$$
+Gradient là **một vector cột**, kí hiệu $$\nabla{f} = \Bigg[\frac{\partial{f}}{\partial{x}}\Bigg]\text{i} + \Bigg[\frac{\partial{f}}{\partial{y}}\Bigg]\text{j}$$
 
 Ví dụ, hàm số $$f(x, y) = x^2 + y^2$$
   sẽ có gradient là: $$\nabla{f} = \begin{bmatrix} 2x \cr 2y \end{bmatrix}$$
