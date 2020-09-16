@@ -1,24 +1,26 @@
 ---
 layout: page
 title: About the Pywind
-tags: [about, Jekyll, theme, moon]
-date: 2016-03-21
+tags: [about]
+date: 2001-06-04
 comments: false
 ---
     
-<center><a href="https://pywind.github.io"><b>Pywind</b></a> is a minimal, one column jekyll theme.</center>
+<center><a href="https://pywind.github.io"><b>Pywind</b></a> now is a student .</center>
+# Hi there 👋
 
 ## Features
-* Minimal, you can focus on your content
-* Responsive
-* Disqus integration
-* Syntax highlighting
-* Optional post image
-* Social icons
-* Page for sharing projects
-* Optional background image
-* Simple navigation menu
-* MathJax support
+
+Now I started:
+
+- 🔭 I’m currently working on **HCMUTE**
+- 🌱 I’m currently learning MACHINE LEARNING
+- 👯 I’m on IMPROVING MYSELT
+- 🤔 I am looking for help with the MOST sincerity
+- 💬 Ask me about HEY! U<3T
+- 📫 How to reach me: FIND ME ON FB/PCYT.21 
+- 😄 Pronouns: Phước
+- ⚡ Fun fact: I'm not have GF :(( !!
 
 ## Preview
 
@@ -30,8 +32,3 @@ comments: false
 
 See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub.
 
-## Getting Started
-
-To learn how to install and use this theme check out the [Setup Guide](http://taylantatli.me/Moon/moon-theme/) for more information.
-      
-[Install Moon](https://github.com/TaylanTatli/Moon){: .btn}
