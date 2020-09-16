@@ -57,7 +57,7 @@ As definition, $$J(\theta_0, \theta_1)$$ is a quadratic function.
 
 ### Derivative of $$J(\theta_0, \theta_1)$$
 
-> Here is an example of the derivative through a 2-variable function. Other multivariate functions are similar.
+> Here is an example of the derivative through a one variable function. Other multivariate functions are similar.
 
 **Step 1**: The derivative of the sum is equal to the sum of the derivatives.
 
@@ -86,7 +86,6 @@ Repeat until convergence (*with amount iteration*) {
 - temp_1  $$=\theta_1 - \alpha\frac{1}{m}\sum_{i=1}^m\:x_i(\theta_0 + \theta_1x_i-y_i)$$
 - $$\theta_0=$$  temp_0
 - $$\theta_1=$$  temp_1
-
 }
 
 ## Importance
@@ -124,32 +123,8 @@ Analysis and visualize before training
 
 > Using seaborn or matplotlib to visualize for an overview of the data set. `In seaborn, can use jointplot or pairplot`
 
-Preparing argument
-
-``` python
-m = len(df)
-X = np.append(arr = np.ones((m,1)).astype(int), values = df[[0,1]], axis = 1) # training examples
-y = df.iloc[:,2].to_numpy(dtype = float).reshape(-1, 1) # real values
-theta = np.zeros((X.shape[1],1)) 
-iters = 1000 # iteration
-alpha = 0.001 # learning rate
-cost = np.zeros((iters, 1)) # Cost function to visualization
-```
-
 Data Preprocessing
-
-``` python
-from sklearn.preprocessing import MinMaxScaler
-#Normalization for data not follow a Gaussian distribution
-
-# Transform data
-norm_X = MinMaxScaler().fit(X)
-X_train = norm_X.transform(X)
-norm_y = MinMaxScaler().fit(y)
-y_train = norm_y.transform(y)
-# First column is bias equal 1
-X_train[:,0] = 1
-```
+> More details in [here](https://pywind.github.io//advance/)
 
 Compute Cost function
 
