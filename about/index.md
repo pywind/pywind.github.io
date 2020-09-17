@@ -19,8 +19,9 @@ comments: false
 <a href="#">
 <img align="center" src="https://github-readme-stats.vercel.app/api?username=pywind">
 </a>
+
+## About me :3
 <center>
-    
 🔭 I’m currently working on **HCMUTE**
 
 🌱 I’m currently learning MACHINE LEARNING
