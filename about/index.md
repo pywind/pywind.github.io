@@ -12,9 +12,8 @@ comments: false
 
 ## Now I started:
 <a href="#" align="left">
-![](https://img.shields.io/badge/-Python-333?style=flat-square&logo=Python&logoColor=fff)
-![](https://img.shields.io/badge/-C/C++-c14438?style=flat-square&logo=C&logoColor=fff)
-
+<img align="left" src="https://img.shields.io/badge/-Python-333?style=flat-square&logo=Python&logoColor=fff">
+<img align="left" src="https://img.shields.io/badge/-C/C++-c14438?style=flat-square&logo=C&logoColor=fff">
 </a>
 
 <a href="#">
