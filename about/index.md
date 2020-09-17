@@ -22,12 +22,14 @@ comments: false
 - ⚡ Fun fact: I'm not have GF :(( !!
 
 ## Preview
+![](https://img.shields.io/badge/-Python-333?style=flat-square&logo=Python&logoColor=fff)
+![](https://img.shields.io/badge/-C/C++-c14438?style=flat-square&logo=C&logoColor=fff)
 
-{% capture images %}
-    https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png
-    https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
-{% endcapture %}
-{% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
+<a href="#">
+<img align="right" src="https://github-readme-stats.vercel.app/api?username = pywind&show_icons=true&hide_border=true&icon_color=586069&title_color=a0a9af">
+</a>
+
+
 
 See a [Moon](http://taylantatli.github.io/Moon)
 
