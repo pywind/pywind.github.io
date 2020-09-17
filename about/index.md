@@ -10,9 +10,7 @@ comments: false
 
 # Hi there 👋
 
-## Features
-
-Now I started:
+## Now I started:
 
 - 🔭 I’m currently working on **HCMUTE**
 - 🌱 I’m currently learning MACHINE LEARNING
@@ -31,5 +29,5 @@ Now I started:
 {% endcapture %}
 {% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
 
-See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub.
+See a [Moon](http://taylantatli.github.io/Moon)
 
