@@ -30,6 +30,3 @@ comments: false
 </a>
 
 
-
-See a [Moon](http://taylantatli.github.io/Moon)
-
