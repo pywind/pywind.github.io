@@ -26,7 +26,7 @@ comments: false
 ![](https://img.shields.io/badge/-C/C++-c14438?style=flat-square&logo=C&logoColor=fff)
 
 <a href="#">
-<img align="right" src="https://github-readme-stats.vercel.app/api?username=pywind">
+<img align="left" src="https://github-readme-stats.vercel.app/api?username=pywind">
 </a>
 
 
