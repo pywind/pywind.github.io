@@ -21,23 +21,14 @@ comments: false
 </a>
 
 ## About me :3
-<center>
-🔭 I’m currently working on **HCMUTE**
 
-🌱 I’m currently learning MACHINE LEARNING
-
-👯 I’m on IMPROVING MYSELT
-
-🤔 I am looking for help with the MOST sincerity
-
-💬 Ask me about HEY! U<3T
-
-📫 How to reach me: FIND ME ON FB/PCYT.21 
-
-😄 Pronouns: Phước
-
-⚡ Fun fact: I'm not have GF :(( !!
- </center>
+* 🔭 I’m currently working on **HCMUTE**
+* 🌱 I’m currently learning MACHINE LEARNING
+* 👯 I’m on IMPROVING MYSELT
+* 💬 Ask me about HEY! U<3T
+* 📫 How to reach me: FIND ME ON FB/PCYT.21 
+* 😄 Pronouns: Phước
+* ⚡ Fun fact: I'm not have GF :(( !!
 
 
 
