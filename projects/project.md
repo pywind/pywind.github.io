@@ -1,3 +1,9 @@
+---
+layout: project
+title: What is here ?
+excerpt: "A note of my projects"
+comments: false
+---
 # Machine Learning 
 
 ### Right now, I'm on my way to machine learning. Take a look at the tag to see if there is anything interesting to you!
@@ -11,3 +17,5 @@ Briefly about Machine Learning, the focus is mainly on supervised learning and u
 * On the other hand, [K-Means](https://pywind.github.io//K-mean) is characteristic of unsupervised learning.
 
 And if your model training is having trouble. See how to improve algorithm optimization [**here**](https://pywind.github.io//advance/)
+
+## `Everything is still being updated. To be continue :3`
