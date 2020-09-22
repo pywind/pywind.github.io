@@ -150,7 +150,7 @@ plt.plot(np.arange(len(cost)), cost, color = 'r')
 
 ```
 
-![](https://imgur.com/a/aTQldmn)
+![cost](https://imgur.com/a/aTQldmn)
 ## Linear Regression with scikit-learn
 ``` python
 from sklearn.linear_model import LinearRegression
