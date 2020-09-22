@@ -11,6 +11,8 @@ tag:
 comments: true
 ---
 
+## Before reading
+
 `Note`:
 - m = number of training
 - $$x's$$ = input features
@@ -23,7 +25,7 @@ comments: true
 
 `Hypothesis`: $$h_{\theta}(x) = \theta_0 + \theta_1x$$
 
-`Cost function`:
+Cost function:
 
 $$J(\theta_1, \theta_2) = \frac{1}{2m}\sum _{i=1}^m\:\left(h_\theta\left(x^{(i)}\right)- y^{(i)}\right)^2$$
 
@@ -104,21 +106,6 @@ $$\theta = \theta - \frac{\alpha}{m} * (X^T (X\theta - y)) $$
 
 ### Source code with python
 
-Import library
-
-``` python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-```
-
-Import data
-
-``` python
-dat = pd.read_csv('name_file')
-```
-
 Analysis and visualize before training
 
 > Using seaborn or matplotlib to visualize for an overview of the data set. `In seaborn, can use jointplot or pairplot`
@@ -164,7 +151,7 @@ plt.plot(np.arange(len(cost)), cost, color = 'r')
 ```
 
 <figure>
-<a href="https://github.com/pywind/pywind.github.io/blob/master/assets/img/costfunction.jpg"><img src="https://github.com/pywind/pywind.github.io/blob/master/assets/img/costfunction.jpg"></a>
+<a href="https://imgur.com/a/aTQldmn"><img src="https://imgur.com/a/aTQldmn"></a>
 </figure>
 
 ## Linear Regression with scikit-learn
