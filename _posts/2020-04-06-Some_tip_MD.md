@@ -1,15 +1,13 @@
 ---
 layout: post
 title:  "Some tips Markdown Syntax"
-date:   2020-03-15
+date:   2020-04-06
 excerpt: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquote, tables, code blocks, and more."
 tag:
 - markdown 
 - syntax
 - sample
-- test
-- jekyll
-comments: true
+comments: false
 ---
 
 ### Figures (for images or video)
