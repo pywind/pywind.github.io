@@ -20,7 +20,7 @@ comments: true
 </figure>
 
 
-##Logistic regression model
+## Logistic regression model
 
 $$0\leqslant h_\theta(x)\leqslant 1$$
 
