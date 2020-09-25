@@ -8,12 +8,19 @@ tag:
 - GD
 comments: true
 ---
-Classification:
+## Classification:
 
 - Can't use linear regression
 - Binary classification problem: Take only tow values 0 & 1. 0 is negative, 1 is positive.
 
-Logistic regression model
+<figure>
+	<a href="https://miro.medium.com/max/1428/1*Vd9ZTC1zWJPtV7iXPMJk1Q.png"><img src="https://miro.medium.com/max/1428/1*Vd9ZTC1zWJPtV7iXPMJk1Q.png"></a>
+	<figcaption> Linear Regression vs Logistic Regression
+    </figcaption>
+</figure>
+
+
+##Logistic regression model
 
 $$0\leqslant h_\theta(x)\leqslant 1$$
 
@@ -22,13 +29,13 @@ $$0\leqslant h_\theta(x)\leqslant 1$$
 
 * Sigmoid function: $$\sigma(s) = \frac{1}{1+e^{-s}}$$ with $$s=\theta x$$
 
-Estimated probability
+## Estimated probability
 
 $$h_\theta=P(y=a|x;\theta)$$
 is  probability that y = a given x, param by $$\theta$$ and $$a\in\begin{Bmatrix}0,1
 \end{Bmatrix}$$
 
-Cost Function
+### Cost Function
 > Use log to avoid numbers being too small. The logo here is ln (log base e)
 
 $$Cost(\sigma(s), y)=\left\{\begin{matrix}
