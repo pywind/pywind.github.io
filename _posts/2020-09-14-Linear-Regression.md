@@ -6,8 +6,8 @@ excerpt: "Give an overview of linear regression. Formally, mathematically and mo
 tag:
 - ML 
 - GD
-- Supervised
-- Learning
+- supervised
+- learning
 comments: true
 ---
 
@@ -111,7 +111,7 @@ Analysis and visualize before training
 > Using seaborn or matplotlib to visualize for an overview of the data set. `In seaborn, can use jointplot or pairplot`
 
 Data Preprocessing
-> More details in [here](https://pywind.github.io//advance/)
+> More details in [here](https://pywind.github.io/advance)
 
 Compute Cost function
 
@@ -141,15 +141,6 @@ for i in range(0, iters):
     theta = GradientDescentMulti(X_train, y_train, theta, alpha)
 ```
 
-Visualize cost function
-
-``` python
-plt.plot(np.arange(len(cost)), cost, color = 'r')
-
-# Chose the good learning rate to get like below.
-
-```
-
 ![cost](https://imgur.com/a/aTQldmn)
 ## Linear Regression with scikit-learn
 ``` python
@@ -166,5 +157,8 @@ prediction = lm.predict(X_test)
 plt.scatter(y_test, prediction)
 ```
 
-# This END! Thank for reading <3
+# This END! Thank for reading !!!
 
+## References
+1. [Machine Learning Andrew Ng](https://www.coursera.org/learn/machine-learning)
+2. More detail of source code: [Simple Linear Regression](https://github.com/pywind/ML_repo/blob/master/Multiple%20Linear%20Regression.ipynb) or [Multiple Linear Regression](https://github.com/pywind/ML_repo/blob/master/Multiple%20Linear%20Regression.ipynb)
