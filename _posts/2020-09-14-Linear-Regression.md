@@ -141,7 +141,6 @@ for i in range(0, iters):
     theta = GradientDescentMulti(X_train, y_train, theta, alpha)
 ```
 
-![cost](https://imgur.com/a/aTQldmn)
 ## Linear Regression with scikit-learn
 ``` python
 from sklearn.linear_model import LinearRegression
