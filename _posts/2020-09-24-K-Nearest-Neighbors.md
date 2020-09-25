@@ -25,7 +25,7 @@ The entire training dataset is stored. When a prediction is required, the k-most
 
 KNN captures the idea of similarity (sometimes called distance, proximity, or closeness) with some mathematics we might have learned in our childhood — calculating the distance between points on a graph.
 
-> There are other ways of calculating distance, and one way might be preferable depending on the problem we are solving. The Euclidean distance is a popular and familiar choice. More detail in [here](https://https://pywind.github.io/Math-in-ML/)
+> There are other ways of calculating distance, and one way might be preferable depending on the problem we are solving. The Euclidean distance is a popular and familiar choice. More detail in [here](https://pywind.github.io/Math-in-ML/)
 
 There is no model to speak of other than holding the entire training dataset. Because no work is done until a prediction is required, KNN is often referred to as a lazy learning method.
 
