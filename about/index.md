@@ -25,7 +25,7 @@ comments: false
 * 🔭 I’m currently working on **HCMUTE**
 * 🌱 I’m currently learning MACHINE LEARNING
 * 👯 I’m on IMPROVING MYSELT
-* 💬 Ask me about HEY! U<3T
+* 💬 Ask me about HEY! U<3t
 * 📫 How to reach me: FIND ME ON FB/PCYT.21 
 * 😄 Pronouns: Phước
 * ⚡ Fun fact: Hater !!!
