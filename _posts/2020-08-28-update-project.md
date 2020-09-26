@@ -18,12 +18,10 @@ comments: true
 
 Briefly about Machine Learning, the focus is mainly on supervised learning and unsupervised learning.
 
-* Come to [`linear regression`](https://pywind.github.io//Linear-Regression), [`logistic regression`](https://pywind.github.io//Logistic-Regression), `KNN` to better understand supervised learning.
+* Come to [`linear regression`](https://pywind.github.io//Linear-Regression), [`logistic regression`](https://pywind.github.io//Logistic-Regression), [`KNN`](https://pywind.github.io//K-Nearest-Neighbors/) to better understand supervised learning.
 
-* On the other hand, [K-Means](https://pywind.github.io//K-mean) is characteristic of unsupervised learning.
+* On the other hand, [`K-Means`](https://pywind.github.io//K-mean) is characteristic of unsupervised learning.
 
 And if your model training is having trouble. See how to improve algorithm optimization [**here**](https://pywind.github.io//advance/)
 
-Everything is still being updated. Continue...[^1]
-
-[^1]: <http://en.wikipedia.org/wiki/Syntax_highlighting>
+Everything is still being updated. Continue...
