@@ -26,9 +26,9 @@ comments: false
 * 🌱 I’m currently learning MACHINE LEARNING
 * 👯 I’m on IMPROVING MYSELT
 * 💬 Ask me about HEY! U<3t
-* 📫 How to reach me: FIND ME ON FB/PCYT.21 
+* 📫 How to reach me: FIND ME ON FB/Pywind
 * 😄 Pronouns: Phước
-* ⚡ Fun fact: Hater !!!
+* ⚡ Fun fact: Hate someone !!!
 
 
 
