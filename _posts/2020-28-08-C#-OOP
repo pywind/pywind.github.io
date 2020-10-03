@@ -1,0 +1,329 @@
+---
+layout: post
+title: C# Object Oriented Programming
+date: 2020-08-28
+project: true
+excerpt: "Some useful function & OOP"
+tags: [project, C#, useful]
+comments: false
+---
+
+
+## Some useful function **C#**
+
+* $"" string
+
+```C#
+int n = 3, m = 5;
+string s = "New string";            Console.Write($"This is {s}, {s.ToUpper()} and we can show {n} & {m} or {m * n}");
+//This is New string, NEW STRING and we can show 3 & 5 or 15
+```
+
+* List example
+
+``` C#
+    // Declare list
+    var names = new List<string> { "Apple", "Organ", "Banana" };
+```
+
+* List `foreach (var index in <List>)`
+* List`.Count();`
+* List`.IndexOf("element_find")`; return index or -1
+* List.Sort()
+* List.Add() "Add more index"
+
+# OOP in C#
+
+``` C#
+class <Name>
+{
+    <access range><component>;
+}
+```
+
+E.g:
+
+``` C#
+class Animal
+    {
+
+        public double Weight;
+        public double Height;
+
+        public void Run()
+        {
+            Console.WriteLine(" Animal is running. . .");
+        }
+    }
+```
+
+## Declare
+
+by new operator:
+
+``` C#
+Animal Cat = new Animal();
+```
+
+> Class is the reference data type, is stored on the heap
+
+### Usage
+
+Call attributions:
+
+``` C#
+<Name object>.<method>(<reference>);
+```
+
+### Constructor and Destructor
+
+#### Constructor
+
+* no arguments
+  * initializes default values ​​for properties inside the class on object initialization
+* arguments
+  * When the object is instantiated for this method to be called, we need to pass all the parameters.
+  * to initialize values ​​for properties inside the class during object initialization
+
+```C#
+// no argument
+
+public Cat()
+{
+    Weight = 1.5; // Default values
+    Height = 10;
+}
+
+// has argument
+
+public Cat(int w, int h)
+{
+    Weight = w;
+    Height = h;
+}
+```
+
+#### Destructor
+
+> Special methods are called before an object is retrieved.
+
+* Having the same name as the class name, but to distinguish it from the constructor, we add a "~" sign before the class name.
+* There is no return type.
+* If you do not declare destructor, C # will automatically create a default destructor.
+* There is only 1 destructor in 1 layer.
+
+### Access specifiers and meaning
+
+| Range | Mean  |
+|:---|:---|
+|  `public` | Unlimited. access anywhere  |
+|  `private` | Only accessible inside the class  |
+| `protected`  |  Like `private` & accessible from derived classes |
+| `internal`  |  access in the same project |
+| `protected internal`  | Like `internal` & accessible from derived classes   |
+
+> Since it doesn't specify keywords, the class will have `internal`.
+
+### Get and set method
+
+* The query methods should start with the **get** keyword and be followed by the name of the property
+* The update methods should start with the **set** keyword followed by the property name.
+* If the property is boolean, the query method name must begin with the keyword **is** and be followed by the property name.
+* The update method return type void and have 1 parameter passed with the same type as the data type of the property.
+* Syntax:
+
+```C#
+<data type> <name of property>
+
+    {
+        get { return <name of property>; }
+        set { <name of property> = value; }
+
+        }
+```
+
+E.g:
+
+```C#
+private double diemLy;
+public double DiemLy
+{
+get { return diemLy; }
+set { diemLy = value; }
+}
+```
+
+* Depending on the needs and security, the programmer can prevent value assignment or prevent data from being obtained by omitting the corresponding keyword.
+
+``` C#
+set
+{
+    if (value <= 10 && value >=0 )
+    {
+        phys = value;
+    }
+}
+```
+
+### Static members
+
+> Sometimes a programmer wants a certain property to be shared by all objects (to be allocated only one memory area). Since then the concept of static members came into being.
+
+Characteristics:
+
+* Initialized **once** only after compiling the program.
+* Can be **used for all** subjects.
+* **Called by class name**.
+* Have: **static variable, static method, static class, static constructor**.
+  
+#### Static variable
+
+```C#
+<access range> static <data type> <name_variable> = <values>;
+```
+
+E.g:
+
+```C#
+public static int Count = 0;
+```
+
+#### Static method
+
+* Static method is common function of class. Called by class name, no initialize, avoid waste of memory.
+* Support to write utilities function.
+  
+```C#
+<access> static <return type> <name_method>
+{
+    // purpose inside
+}
+```
+
+#### Static class
+
+* Can contain static methods, static variables.
+
+```C#
+<access range> static class <name_class>
+
+{
+// attributes
+}
+```
+
+## Inheritance
+
+* build a new class from an existing class.
+  * A new class is called *subclass* or *derived class*.
+  * An existing class is called a *superclass* or a *base class*.
+* Reuse and easy to upgrade, easy to maintain.
+  
+Syntax:
+
+```C#
+class <name_subclass> : <superclass>
+{
+
+}
+```
+
+### Issues in inheritance
+
+> The superclass default constructor is always called every time an object of the subclass is initialized. And called before the subclass constructor.
+> Subclass must have a corresponding constructor and call the superclass constructor method through the keyword **base**.
+
+Syntax:
+
+```C#
+public <name_class>(<parameter list of subclass>) : base(<parameter list>)
+{
+    //content
+}
+```
+
+* `parameter list` is the parameter list corresponding to the constructor of the superclass.
+
+E.g:
+
+```C#
+class Animal
+    {
+        public Animal(double w, double h, int l)
+        {
+            Weight = w;
+            Height = h;
+            Legs = l;
+        }
+    }
+
+class Cat : Animal
+    {
+        public Cat()
+        {
+            Weight = 1500;
+            Height = 20;
+            Leg = 4;
+        }
+        public Cat(double w, double h, int l) : base(w, h, l)
+        {
+            //
+        }
+    }
+```
+
+![](https://f.howkteam.vn/Upload/cke/images/2_IMAGE%20TUTORIAL/1_C%23_AutoC%23/4_C%23%20H%C6%B0%E1%BB%9Bng%20%C4%91%E1%BB%91i%20t%C6%B0%E1%BB%A3ng%20(OOP)/B05_K%C3%AA%CC%81%20th%C6%B0%CC%80a%20trong%20L%C3%A2%CC%A3p%20tri%CC%80nh%20OOP/2_K%C3%AA%CC%81%20th%C6%B0%CC%80a%20trong%20L%C3%A2%CC%A3p%20tri%CC%80nh%20h%C6%B0%C6%A1%CC%81ng%20%C4%91%C3%B4%CC%81i%20t%C6%B0%C6%A1%CC%A3ng_Howkteam_com.png)
+
+* In C # there is support for the **new** keyword to mark this as a **new** function and the function inheriting from the superclass will be masked so that the outside cannot be called.
+
+> An object of the superclass can refer to the memory of an object belonging to the subclass, but otherwise cannot.
+
+## Polymorphism
+
+### Virtual and override
+
+* Virtual is the keyword used to declare a virtual method (virtual methods are overridden methods).
+* Override is the keyword used to mark the method that overrides the method of the superclass.
+
+Note: {: .notice}
+
+* Only override virtual or abstract methods.
+* Polymorphism is only shown when the superclass method is overridden.
+
+> We need to override the Speak() method of the superclass (Animal class) and to override it, we need to declare the Speak() method of the superclass as a virtual method.
+
+```C#
+class Animal
+    {
+        public virtual void Speak()
+        {
+            Console.WriteLine(" Animal is speaking. . .");
+        }
+    }
+
+    class Cat : Animal
+    {
+        public override void Speak()
+        {
+            Console.WriteLine(" Cat is speaking. . .");
+        }
+    }
+
+    class Dog : Animal
+    {
+        public override void Speak()
+        {
+            Console.WriteLine(" Dog is speaking. . .");
+        }
+    }
+```
+
+### Abstract class and pure virtual method
+
+* A pure virtual method is a virtual method and has no internal definition.
+* The abstract class is the class that contains pure virtual methods.
+* Abstract is the keyword used to declare an abstract class or a pure virtual method.
+
+**Note**: When inheriting an abstract class you are required to override all pure virtual methods to ensure program validity.
+{: .notice}
+
