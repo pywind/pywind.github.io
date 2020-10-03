@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Logistic Regression"
+title:  "[ML] Logistic Regression"
 date:   2020-09-15
 excerpt: "Just about everything you need to know about logistic regression, math, derivative and more."
 tag:
