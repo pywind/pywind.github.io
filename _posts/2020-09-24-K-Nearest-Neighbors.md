@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "K-Nearest Neighbors"
+title:  "[ML]K-Nearest Neighbors"
 date:   2020-09-24
 excerpt: "One of the simplest algorithms in supervised learning."
 tag:
