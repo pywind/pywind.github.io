@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Linear Regression"
+title:  "[ML] Linear Regression"
 date:   2020-09-14
 excerpt: "Give an overview of linear regression. Formally, mathematically and more deeply."
 tag:
