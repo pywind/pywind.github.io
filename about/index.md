@@ -30,5 +30,7 @@ comments: false
 * 😄 Pronouns: Phước
 * ⚡ Fun fact: Hate someone !!!
 
+This is my instroduction video !!!
 
+<iframe width="853" height="480" src="https://www.youtube.com/embed/2IKBp7_BAiQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
