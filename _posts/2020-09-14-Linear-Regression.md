@@ -141,9 +141,12 @@ for i in range(0, iters):
     theta = GradientDescentMulti(X_train, y_train, theta, alpha)
 ```
 
-We can have a good cost function like that: 
 
-!(cost function)[https://raw.githubusercontent.com/pywind/pywind.github.io/master/assets/img/costfunction.jpg]
+<figure>
+	<a href="https://raw.githubusercontent.com/pywind/pywind.github.io/master/assets/img/costfunction.jpg"><img src="https://raw.githubusercontent.com/pywind/pywind.github.io/master/assets/img/costfunction.jpg"></a>
+	<figcaption> We can have a good cost function look like
+    </figcaption>
+</figure>
 
 ## Linear Regression with scikit-learn
 ``` python
