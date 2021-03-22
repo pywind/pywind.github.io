@@ -3,7 +3,7 @@ layout: post
 title: Java MongoDB Step by Step
 date: 2020-08-28
 project: true
-excerpt: "Làm việc với MongoDB bằng JAVA"
+excerpt: "Làm việc với MongoDB bằng Java"
 tags: [MongoDB, Java, database]
 comments: false
 ---
@@ -40,7 +40,7 @@ Nhập vào:
 
 Ví dụ: 
 
-```jv
+```java
 <project xmlns="http://maven.apache.org/POM/4.0.0"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -65,7 +65,7 @@ Ví dụ:
 
 ## Tạo những cấu trúc được định hình sẵn
 
-```jv
+```java
 public class MyConstants {
  
   // Nếu tên DB này chưa có trong hệ thống
@@ -80,7 +80,7 @@ public class MyConstants {
 > Mọi kết nối đều cần thông qua HOST:PORT tương ứng, vì vậy chúng ta cần khai báo chúng để sử dụng và thay đổi(có thể)
 
 1. Khai báo host và port
-```jv
+```java
 // Host: địa chỉ của host, ở đây là cá nhân nên sẽ là localhost
 private static final String HOST = "localhost";
 // port: Cổng tương ứng
@@ -91,7 +91,7 @@ private static final int PORT = 27017;
 
 Để kết nối vào các host bằng MongoDB, ta cần các client. MongoClient là tuyến đường của bạn ở MongoDB, từ điều này, bạn sẽ nhận được database -> collection để làm việc
 
-```jv
+```java
 MongoClient mongoClient = new MongoClient();
 ```
 
@@ -99,7 +99,7 @@ Một cách đơn giản nếu bạn đang có một kết nối local và sử 
 
 Hoặc: 
 
-```jv
+```java
 MongoClient mongoClient = new MongoClient(new MongoClientURI("MongoDB://"Host":'port'"));
 // Sử dụng URI để kết nối nhanh chóng
 // Hoặc dễ hiểu hơn
@@ -115,7 +115,7 @@ MongoClient mongoClient = new MongoClient(HOST, PORT);
 * Không bảo mật: Đơn giản là chỉ cần làm như (2)
 * Có bảo mật: bạn phải có credential bằng user và password để chúng minh bản thân đang sở hữu quyền truy cập
 
-```jv
+```java
 //Tạo chứng chỉ  
 MongoCredential credential = MongoCredential.createMongoCRCredential(
               USERNAME, MyConstants.DB_NAME, PASSWORD.toCharArray());
@@ -128,7 +128,7 @@ MongoCredential credential = MongoCredential.createMongoCRCredential(
 
 **Java** cung cấp Object DB để truy vấn database, hãy đảm bảo bạn đã tạo mongoClient mà không bị dính *UnknownHostException*.
 
-```jv 
+```java 
 // (Không nhất thiết DB này phải tồn tại sẵn
 // nó sẽ được tự động tạo ra nếu chưa tồn tại).
 DB db = mongoClient.getDB(MyConstants.DB_NAME);
@@ -136,7 +136,7 @@ DB db = mongoClient.getDB(MyConstants.DB_NAME);
 
 Khi đã có quyền tới database, bây giờ cùng đến với khái niệm **Collection**
 
-```jv
+```java
 // Ví dụ lấy ra Collection với tên Department.
 // Không nhất thiết Collection này phải tồn tại trong DB.
 DBCollection dept = db.getCollection("Department");
@@ -144,7 +144,7 @@ DBCollection dept = db.getCollection("Department");
 
 Source code ví dụ: 
 
-```jv
+```java
 package org.o7planning.tutorial.MongoDB;
  
 import java.net.UnknownHostException;
@@ -216,7 +216,7 @@ public class MongoUtils {
 
 Khi đã có Collection bằng *getCollection*, chỉ đơn giản là tạo các document và insert vào collection.
 
-```jv
+```java
 List<Integer> books = Arrays.asList(27464, 747854);
 DBObject person = new BasicDBObject("_id", "jo")
                             .append("name", "Jo Bloggs")
@@ -263,7 +263,7 @@ person = {
 
 2. Java API
 
-```jv
+```java
 // Một số method của class DBCollection cho việc truy vấn:
 public DBCursor find(DBObject ref)
   
